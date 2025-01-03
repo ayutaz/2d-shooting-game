@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public int power = 1;
 
     void Start() {
-        GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
+        GetComponent<Rigidbody2D>().linearVelocity = transform.up.normalized * speed;
         Destroy(gameObject, lifeTime);
     }
 

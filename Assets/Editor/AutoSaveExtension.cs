@@ -2,6 +2,8 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 [InitializeOnLoad]
 public class AutoSave
@@ -26,7 +28,7 @@ public class AutoSave
                 if (IsSaveScene)
                 {
                     Debug.Log("save scene " + System.DateTime.Now);
-                    EditorApplication.SaveScene();
+                    EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
                 }
                 IsManualSave = true;
             }
@@ -49,7 +51,7 @@ public class AutoSave
                     if (IsSaveScene)
                     {
                         Debug.Log("save scene " + System.DateTime.Now);
-                        EditorApplication.SaveScene();
+                        EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
                     }
                 }
                 isChangedHierarchy = false;
@@ -57,7 +59,7 @@ public class AutoSave
             }
         };
 
-        EditorApplication.hierarchyWindowChanged += () =>
+        EditorApplication.hierarchyChanged += () =>
         {
             if (!EditorApplication.isPlaying)
                 isChangedHierarchy = true;

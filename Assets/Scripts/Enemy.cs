@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        GetComponent<Rigidbody2D>().velocity = direction * spaceShip.speed;
+        GetComponent<Rigidbody2D>().linearVelocity = direction * spaceShip.speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
