@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public GUIText scoreGUIText;
-    public GUIText highScoreGUIText;
+    public TextMeshProUGUI scoreGUIText;
+    public TextMeshProUGUI highScoreGUIText;
     private int score;
     private int highScore;
     private string highScoreKey = "highScore";
